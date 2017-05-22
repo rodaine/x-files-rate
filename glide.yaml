@@ -1,0 +1,10 @@
+package: github.com/rodaine/x-files-rate
+import:
+- package: github.com/tsenart/vegeta
+  version: v6.1.1
+  subpackages:
+  - lib
+- package: golang.org/x/time
+  subpackages:
+  - rate
+- package: github.com/didip/tollbooth

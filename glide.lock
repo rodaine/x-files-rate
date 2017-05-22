@@ -1,0 +1,28 @@
+hash: e149c4e6e236a1df3f96f080bec94cb06091b80a61e8d443d1243aaaa20b1fdf
+updated: 2017-05-22T00:29:32.032204388-07:00
+imports:
+- name: github.com/didip/tollbooth
+  version: de229036b78daed1a011b643519bde8d12f36411
+  subpackages:
+  - config
+  - errors
+  - libstring
+- name: github.com/streadway/quantile
+  version: b0c588724d25ae13f5afb3d90efec0edc636432b
+- name: github.com/tsenart/vegeta
+  version: 7cff4dc0ed44f0a8b9777caf050950eb67972f43
+  subpackages:
+  - lib
+- name: golang.org/x/net
+  version: bb807669a61aca6092d8137da1fab2150bb96ad7
+  subpackages:
+  - context
+  - http2
+  - http2/hpack
+  - idna
+  - lex/httplex
+- name: golang.org/x/time
+  version: 8be79e1e0910c292df4e79c241bb7e8f7e725959
+  subpackages:
+  - rate
+testImports: []
