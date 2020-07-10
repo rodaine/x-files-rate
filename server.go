@@ -9,7 +9,7 @@ import (
 
 func Serve(m RateLimiter, s *upstream.Service) {
 	http.HandleFunc("/", m(*hertz, *burst, *wait, HelloWorld(s)))
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe("localhost:8080", nil)
 }
 
 func HelloWorld(s *upstream.Service) http.HandlerFunc {
