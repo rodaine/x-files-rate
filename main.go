@@ -2,8 +2,6 @@ package main
 
 import (
 	"flag"
-	"syscall"
-
 	"time"
 
 	"github.com/rodaine/x-files-rate/upstream"
@@ -24,7 +22,6 @@ var (
 )
 
 func main() {
-	AdjustMaxFD()
 	flag.Parse()
 
 	m := Resolve(*target)
@@ -32,22 +29,4 @@ func main() {
 
 	go Serve(m, s)
 	Test(*rps)
-}
-
-func AdjustMaxFD() {
-	checkErr := func(err error) {
-		if err != nil {
-			panic(err)
-		}
-	}
-
-	var rLimit syscall.Rlimit
-	err := syscall.Getrlimit(syscall.RLIMIT_NOFILE, &rLimit)
-	checkErr(err)
-
-	rLimit.Max = 999999
-	rLimit.Cur = 999999
-
-	err = syscall.Setrlimit(syscall.RLIMIT_NOFILE, &rLimit)
-	checkErr(err)
 }

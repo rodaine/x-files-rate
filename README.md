@@ -6,16 +6,13 @@ An example program for the blog post [_The X-Files: Controlling Throughput with 
 
 ### Bootstrap
 
-This package uses [glide](https://glide.sh/) to handle dependencies:
-
 ```sh
-glide install
-go build
+go get github.com/rodaine/x-files-rate
 ```
 
 ### Run
 
-Each rate-limiting middleware can be tested with ever-increasing RPS via [vegeta](https://github.com/tsenart/vegeta) using a customized vegeta test harness. The target names for the middleware can be found in `middleware.go`. Results are printed to stdout and also stored in **./results/_{{target}}_.csv**.
+Each rate-limiting middleware can be tested with ever-increasing RPS via [vegeta](https://github.com/tsenart/vegeta) using a customized vegeta test harness. The target names for the middleware can be found in [`middleware.go`](middleware.go). Results are printed to stdout and also stored in **./results/_{{target}}_.csv**.
 
 ```sh
 ./run.sh        # defaults to no rate-limiter
